@@ -1,0 +1,95 @@
+@font-face {
+    font-family: "Kanit";
+    src:
+        local("Kanit"),
+        url("./assets/font/Kanit-LightItalic.ttf") format("ttf"),
+        url("./assets/font/Kanit-SemiBold.ttf") format("ttf");
+}
+
+:root {
+    --light: #FFFCF2;
+    --medium-light: #CCC5B9;
+    --medium: #EB5E28;
+    --medium-dark: #403D39;
+    --dark: #252422;
+
+    --main-font: "Kanit";
+    --semi-bold: 600;
+    --light-italic: 300;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 2000px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: var(--dark);
+    font-family: var(--main-font);
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: var(--semi-bold);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main__header {
+    height: 100vh;
+    display: grid;
+    grid-template:
+        '. nav'
+        'name canvas';
+}
+
+.main__nav {
+    grid-area: nav;
+}
+
+.nav__list {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__list__item {
+    margin: 0 1rem;
+}
+
+.nav__list__item__link {
+    color: var(--light);
+    transition: ease-in 0.1s;
+}
+
+.nav__list__item__link:hover {
+    color: var(--medium);
+}
+
+.nav__list__item__link--lang {
+    color: var(--medium-dark);
+}
+
+.name__container {
+    grid-area: name;
+}
+
+.canvas__container {
+    grid-area: canvas;
+}
